@@ -1,0 +1,79 @@
+doctype HTML
+html
+	head
+		title Reuven Karasik
+		meta(name="description" content="I'm Reuven Karasik. A Full Stack Developer, an entrepreneur, photographer, and optimist.")
+		meta(property="og:title" content="Reuven Karasik")
+		meta(property="og:url" content="http://reuven.rocks")
+		meta(property="og:description" content="I'm Reuven Karasik. A Full Stack Developer, an entrepreneur, photographer, and optimist.")
+		meta(property="og:type" content="profile")
+
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(href="css/style.min.css" rel="stylesheet")
+		link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/brands.css' integrity='sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite' crossorigin='anonymous')
+		link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css' integrity='sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7' crossorigin='anonymous')
+
+		
+	body
+		header
+			h1 
+				a(href="mailto:ithink@reuven.rocks") Reuven
+				| 's TODO list:
+
+		main
+			ul
+				li.completed Start working on this website
+				li Finish working on this website
+
+
+
+		section
+			h2 A bit about myself
+			p I'm Reuven Karasik. I'm currently 
+				abbr#age(title="Just take the last two digits of the current year. I was born in 2000.") 18
+				|  years old.
+			p
+				| I started writing code when I was 7. Since then, I taught myself some useful things,
+				| including both Front-End and Back-End Web Development.
+				| I've been a freelance developer since the age of 13
+				| and worked at a few small startups in Jerusalem while finishing High School.
+				br
+				| In 2015 I founded the Tomorrow JLM community for young entrepreneurs in Jerusalem,
+				| and organized a couple of large Hackathons with over 100 participants.
+				
+			p I currently work at 
+				a(href="https://alefalefalef.co.il") AlefAlefAlef
+				| , a Hebrew Typography Studio, and make an effort to travel and have fun in my free time. 
+				br
+				span Feel free to reach out to me at 
+					a(href="mailto:ithink@reuven.rocks")
+						var ithink@reuven.rocks
+					|  :)
+
+			- 
+				social = {
+					'facebook-f': 'https://fb.com/reuven.karasik',
+					'facebook-messenger': 'https://m.me/reuven.karasik',
+					'github': 'https://github.com/kinging123',
+					'wordpress': 'https://profiles.wordpress.org/kinging#content-plugins',
+					'instagram': 'https://instagram.com/reuven_karasik',
+					//- 'linkedin': 'https://www.linkedin.com/in/reuven-karasik-86605768',
+					'medium-m': 'https://medium.com/@reuvenk',
+				}
+			p.social
+				- for (network in social)
+					a(href=social[network], target="_blank")
+						i.fab(class="fa-"+network)
+
+		footer Looking for more? You shouldn't. Minimalism is the new thing (apparently).
+
+		script.
+			document.getElementById('age').innerHTML=new Date().getFullYear()-2000;
+
+		//- Global site tag (gtag.js) - Google Analytics
+		script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-125846040-1")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-125846040-1');

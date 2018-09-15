@@ -1,0 +1,98 @@
+@import 'palette'
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light|Kreon:300,400)
+$font-size: 30px
+$mobile-font-size: 24px
+$font: 'Kreon', sans-serif
+$hand-font: 'Shadows Into Light', cursive
+
+// Colors
+$main-color: rgb(10,10,20)
+$background-color: $color5
+$text-color: $main-color
+
+@mixin mobile
+	@media all and (max-width: 700px)
+		@content
+
+body
+	background-color: $background-color
+	color: $text-color
+	text-align: center
+	font-family: $font
+	font-size: $font-size
+	padding: 0 10px
+
+	+mobile
+		font-size: $mobile-font-size
+
+	*
+		// transition: all .5s ease-in
+
+	a
+		&, &:hover, &:active, &:focus, &:visited
+			color: inherit
+			// text-decoration: none
+
+		&:hover
+			color: $color4
+header
+
+	h1
+		line-height: 1
+		font-size: 1.6em
+		a
+			display: inline-block
+			border-bottom: 2px solid transparent
+			transition: .1s all linear
+			text-decoration: none
+			&:hover
+				border-bottom: 2px solid $text-color
+
+main
+	font-family: $hand-font
+	width: 100%
+	max-width: 700px
+	margin: 0 auto
+
+	// hr
+	// 	border: 0
+	// 		bottom: 3px solid $text-color
+
+	ul
+		text-align: left
+
+		li.completed
+			text-decoration: line-through
+
+section
+	text-align: left
+	margin: 60px auto
+	max-width: 700px;
+	&::before
+		content: ""
+		display: block
+		width: 40px
+		height: 2px
+		margin: 0 auto
+		background-color: $text-color
+	
+	p
+		font-size: .7em
+		font-weight: lighter
+
+		span
+			+mobile
+				font-size: .88em
+
+		&.social
+			.fab
+				font-size: 1.3em
+				margin-right: 10px
+
+				
+
+footer
+	font-size: 18px
+	margin: 100px auto 30px
